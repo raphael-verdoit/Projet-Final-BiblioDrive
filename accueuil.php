@@ -26,21 +26,20 @@
                     <?php if (isset($_GET['recherche_auteur']) && !empty(trim($_GET['recherche_auteur']))){ require('./php/search.php');} # Au lieu de isset buton pour eviter une url sur charger?>
                 </div> 
 
-                <div class="col-3"> <!-- Login -->
-                    <form action="" method="POST">
-                        <div>
-                            <label for="email">Email:</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div>
-                            <label for="mdp">Password:</label>
-                            <input type="password" id="pass" name="pass" required>
-                        </div>
-                        <div>
-                            <button type="submit" id="login_submit" name="login_submit">Log In</button>
-                        </div>
-                    </form>
-                </div>
+            <div class="col-3"> 
+                <form action="./php/login.php" method="POST">
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="mdp">Password:</label>
+                        <input type="password" id="pass" name="pass" required>
+                    </div>
+                    <div>
+                        <button type="submit" id="login_submit" name="login_submit">Log In</button>
+                    </div>
+                </form>
             </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
