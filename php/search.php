@@ -2,6 +2,7 @@
     require("db.php");
 
     $sql = "SELECT
+                livre.nolivre,
                 livre.titre,
                 livre.anneeparution,
                 auteur.nom,
@@ -36,7 +37,8 @@
     }
     
     while($resultat = $stmt->fetch(PDO::FETCH_OBJ)){
-        echo htmlspecialchars($resultat->titre) . ' ' . htmlspecialchars($resultat->nom) . ' ' . htmlspecialchars($resultat->prenom) . ' - (' . htmlspecialchars($resultat->anneeparution) . ') <br>';
+        $id = $resultat->nolivre;
+        echo '<a href="accueuil.php?id_livre=' . $id . '">' . htmlspecialchars($resultat->titre) . ' ' . htmlspecialchars($resultat->nom) . ' ' . htmlspecialchars($resultat->prenom) . ' - (' . htmlspecialchars($resultat->anneeparution) . ') </a> <br>';
     }
     
 ?>

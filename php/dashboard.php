@@ -42,7 +42,7 @@ $user_email = $_SESSION['user_email'];
 
     <p>This is a protected page. Only logged-in users can see this content.</p>
 
-    <a href="logout.php">Logout</a>
+    <a href="../accueuil.php">Logout</a>
 
 </body>
 </html>

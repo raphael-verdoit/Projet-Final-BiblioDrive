@@ -23,7 +23,14 @@
         
             <div class="row">
                 <div class="col-9"> <!-- Contenu -->
-                    <?php if (isset($_GET['recherche_auteur']) && !empty(trim($_GET['recherche_auteur']))){ require('./php/search.php');} # Au lieu de isset buton pour eviter une url sur charger?>
+                    <?php
+                        if (isset($_GET['id_livre'])){
+                            require('./php/details.php');
+                        } 
+                        elseif (isset($_GET['recherche_auteur']) && !empty(trim($_GET['recherche_auteur']))){ 
+                            require('./php/search.php');
+                        } # Au lieu de isset buton pour eviter une url sur charger
+                    ?>
                 </div> 
 
             <div class="col-3"> 
