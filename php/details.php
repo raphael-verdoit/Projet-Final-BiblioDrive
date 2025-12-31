@@ -18,4 +18,5 @@
                 livre.nolivre LIKE :id_livre";
 
     $id_livre = $_GET['id_livre'];
+    $stmt = $connexion->prepare($sql);
 ?>
