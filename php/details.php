@@ -1,4 +1,7 @@
 <?php
+    // 1. Démarrage de la session (OBLIGATOIRE au tout début)
+    session_start();
+
     // Connexion à la base de données
     require("db.php");
 
@@ -75,16 +78,30 @@
                             <p class="text-justify"><?php echo nl2br(htmlspecialchars($livre['detail'])); ?></p>
                         </div>
 
+                        <div class="mb-4">
+                            <?php if(isset($_SESSION['mel'])): ?>
+                                <form action="ajouter_panier.php" method="POST">
+                                    <input type="hidden" name="id_livre" value="<?php echo htmlspecialchars($livre['nolivre']); ?>">
+                                    <button type="submit" class="btn btn-success btn-lg">
+                                        Ajouter au panier
+                                    </button>
+                                </form>
+                            <?php else: ?>
+                                <div class="alert alert-warning d-inline-block">
+                                    Veuillez vous <a href="login.php" class="alert-link">connecter</a> pour emprunter ce livre.
+                                </div>
+                            <?php endif; ?>
+                        </div>
                         <div class="mt-auto">
                             <p class="text-muted small">Paru en : <?php echo htmlspecialchars($livre['anneeparution']); ?></p>
                             <a href="./accueuil.php" class="btn btn-outline-secondary">
-                                &larr; Retour à la liste
+                                &larr; Retour
                             </a>
                         </div>
                     </div>
 
                     <div class="col-md-4 text-center">
-                        <img src="../images-couvertures/<?php echo htmlspecialchars($livre['photo']); ?>" 
+                        <img src="../BiblioDrive/images-couvertures/<?php echo htmlspecialchars($livre['photo']); ?>" 
                              alt="Couverture de <?php echo htmlspecialchars($livre['titre']); ?>" 
                              class="img-fluid rounded shadow-sm border">
                     </div>
