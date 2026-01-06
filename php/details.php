@@ -88,7 +88,7 @@
                                 </form>
                             <?php else: ?>
                                 <div class="alert alert-warning d-inline-block">
-                                    Veuillez vous <a href="login.php" class="alert-link">connecter</a> pour emprunter ce livre.
+                                    Veuillez vous <a href="./accueuil.php" class="alert-link">connecter</a> pour emprunter ce livre.
                                 </div>
                             <?php endif; ?>
                         </div>
@@ -101,7 +101,7 @@
                     </div>
 
                     <div class="col-md-4 text-center">
-                        <img src="../BiblioDrive/images-couvertures/<?php echo htmlspecialchars($livre['photo']); ?>" 
+                        <img src="./images-couvertures/<?php echo htmlspecialchars($livre['photo']); ?>" 
                              alt="Couverture de <?php echo htmlspecialchars($livre['titre']); ?>" 
                              class="img-fluid rounded shadow-sm border">
                     </div>

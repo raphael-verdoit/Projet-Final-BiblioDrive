@@ -1,6 +1,7 @@
 <?php
 // 1. Démarrer la session au tout début
 session_start();
+$_SESSION['mel'] = $resultat['mel']; // Adaptez selon votre code existant
 
 // 2. Inclure la connexion à la base de données
 require "db.php";

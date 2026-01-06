@@ -7,12 +7,12 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
     </head>
-
+    <?php session_start();?>
     <body>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-9"> <!-- Header -->
-                    <?php require("./html/header.html"); ?>
+                    <?php require("./php/header.php"); ?>
                     <form action="" method="get">
                         <input type="text" name="recherche_auteur" placeholder="Nom de l'auteur : ">
                         <button type="submit"><img src="./images/loupe.svg" alt="loupe.svg" id="loupe"></button>
