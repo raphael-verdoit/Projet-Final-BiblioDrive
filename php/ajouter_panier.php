@@ -9,11 +9,13 @@ if (isset($_GET['id'])) {
         $_SESSION['panier'] = [];
     }
 
+
     if (!in_array($id_livre, $_SESSION['panier'])) {
         $_SESSION['panier'][] = $id_livre;
     }
 }
 
+
 header("Location: panier.php"); 
-exit(); 
+exit(); // Indispensable pour arrêter l'exécution du script
 ?>

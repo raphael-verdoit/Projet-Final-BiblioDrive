@@ -1,8 +1,6 @@
 <?php
 
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
+
 require "db.php";
 
 if (isset($_POST['login_submit'])){
