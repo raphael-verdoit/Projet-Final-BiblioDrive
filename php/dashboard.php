@@ -1,22 +1,29 @@
 <?php
 
+session_start();
 
+// Vérifier 'mel' au lieu de 'user_email' pour être cohérent
 if (!isset($_SESSION['mel'])) {
     header('Location: login.php');
     exit();
 }
 
-$timeout_duration = 1800; 
+// Optional: Implement session timeout (30 minutes of inactivity)
+$timeout_duration = 1800; // 30 minutes in seconds
+
 if (isset($_SESSION['last_activity']) && 
     (time() - $_SESSION['last_activity']) > $timeout_duration) {
+    // Session expired due to inactivity.
     session_unset();
     session_destroy();
     header('Location: login.php');
     exit();
 }
 
+// Update the last activity timestamp.
 $_SESSION['last_activity'] = time();
 
+// User is authenticated; retrieve their information from the session.
 $user_name = $_SESSION['user_name'];
 $user_email = $_SESSION['user_email'];
 ?>

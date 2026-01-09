@@ -1,21 +1,13 @@
 <?php
 session_start();
-require "db.php";
-
-if (isset($_GET['id'])) {
-    $id_livre = $_GET['id'];
-
+if (isset($_POST['id_livre'])) {
+    $id = $_POST['id_livre'];
+    // Initialise le panier s'il n'existe pas
     if (!isset($_SESSION['panier'])) {
         $_SESSION['panier'] = [];
     }
-
-
-    if (!in_array($id_livre, $_SESSION['panier'])) {
-        $_SESSION['panier'][] = $id_livre;
-    }
+    // Ajoute le livre au panier (l'ID comme clé évite les doublons)
+    $_SESSION['panier'][$id] = true;
 }
-
-
-header("Location: panier.php"); 
-exit(); // Indispensable pour arrêter l'exécution du script
-?>
+header('Location: panier.php');
+exit();

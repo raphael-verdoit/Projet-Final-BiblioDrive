@@ -1,5 +1,5 @@
 <?php
-    
+    session_start();
     require("db.php");
 
     if (isset($_GET['id_livre'])) {
@@ -95,7 +95,7 @@
                     </div>
 
                     <div class="col-md-4 text-center">
-                        <img src="./images-couvertures/<?php echo htmlspecialchars($livre['photo']); ?>" 
+                        <img src="../images-couvertures/<?php echo htmlspecialchars($livre['photo']); ?>" 
                              alt="Couverture de <?php echo htmlspecialchars($livre['titre']); ?>" 
                              class="img-fluid rounded shadow-sm border">
                     </div>

@@ -31,7 +31,7 @@ if (isset($_POST['login_submit'])){
 <?php if (isset($_SESSION['mel'])): ?>
     
     <p>Bienvenue, <strong><?php echo htmlspecialchars($_SESSION['user_name']); ?></strong> (Connecté)</p>
-    <a href="logout.php">Se déconnecter</a>
+    <a href="./php/logout.php">Se déconnecter</a>
 
 <?php else: ?>
     <h2>Connexion</h2>
