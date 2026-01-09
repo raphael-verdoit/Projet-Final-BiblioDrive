@@ -17,7 +17,7 @@
                         <button type="submit"><img src="./images/loupe.svg" alt="loupe.svg" id="loupe"></button>
                     </form>
                 </div>
-                <div class="col-3"><img src="" alt="logo bibli"></div> <!-- Logo -->
+                <div class="col-3"><img src="./images/logo.gif" alt="logo bibli"></div> <!-- Logo -->
             </div>
         
             <div class="row">
