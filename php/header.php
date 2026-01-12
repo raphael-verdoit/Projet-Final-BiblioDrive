@@ -33,7 +33,7 @@ if (session_status() === PHP_SESSION_NONE) {
                 <div class="d-flex align-items-center">
                     <?php if(isset($_SESSION['mel'])): ?>
                         <span class="navbar-text me-3">
-                            Bonjour, <strong><?php echo htmlspecialchars($_SESSION['mel']); ?></strong>
+                            Bonjour, <a href="./dashboard.php"><strong><?php echo htmlspecialchars($_SESSION['mel']); ?></strong></a>
                         </span>
                         <a href="<?php echo $prefixe_php; ?>panier.php" class="btn btn-outline-primary me-2">Mon Panier</a>
                         <a href="<?php echo $prefixe_php; ?>logout.php" class="btn btn-outline-danger">Déconnexion</a>
