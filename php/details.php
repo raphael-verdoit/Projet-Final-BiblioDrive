@@ -43,10 +43,7 @@
 <body class="bg-light">
 
     <?php 
-        // Inclusion du header si disponible
-        if(file_exists("../html/header.html")) {
-            include("../html/header.html"); 
-        }
+        require("./header.php"); 
     ?>
 
     <div class="container my-5">
@@ -94,9 +91,9 @@
                     </div>
 
                     <div class="col-md-4 text-center">
-                        <img src="./images-couvertures/<?php echo htmlspecialchars($livre['photo']); ?>" 
-                             alt="Couverture de <?php echo htmlspecialchars($livre['titre']); ?>" 
-                             class="img-fluid rounded shadow-sm border">
+                        <img src="../images-couvertures/<?php echo htmlspecialchars($livre['photo']); ?>" 
+                            alt="Couverture de <?php echo htmlspecialchars($livre['titre']); ?>" 
+                            class="img-fluid rounded shadow-sm border">                    
                     </div>
                 </div>
             </div>
