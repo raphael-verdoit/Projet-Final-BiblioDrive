@@ -1,33 +1,3 @@
-<?php
-
-
-require "db.php";
-
-if (isset($_POST['login_submit'])){
-    $email = $_POST['email'];
-    $mdp = $_POST['pass'];
-
-    try {
-        $sql = 'SELECT * FROM utilisateur WHERE mel = ?';
-        $stmt = $connexion->prepare($sql);
-        $stmt->execute([$email]);
-        $user = $stmt->fetch(PDO::FETCH_OBJ);
-
-        if ($user && $mdp === $user->motdepasse) {
-            $_SESSION['mel'] = $user->mel; 
-            $_SESSION['user_name'] = $user->prenom . ' ' . $user->nom;
-            
-            header('Location: ' . $_SERVER['PHP_SELF']); 
-            exit();
-        } else {
-            $erreur = "Email ou mot de passe incorrect.";
-        }
-    } catch (Exception $e) {
-        die("Erreur : " . $e->getMessage());
-    }
-}
-?>
-
 <?php if (isset($_SESSION['mel'])): ?>
     
     <p>Bienvenue, <strong><?php echo htmlspecialchars($_SESSION['user_name']); ?></strong> (Connecté)</p>
@@ -35,7 +5,7 @@ if (isset($_POST['login_submit'])){
 
 <?php else: ?>
     <h2>Connexion</h2>
-    <?php if(isset($erreur)) echo "<p style='color:red'>$erreur</p>"; ?>
+    <?php if(isset($erreur) && $erreur) echo "<p style='color:red'>$erreur</p>"; ?>
     
     <form action="" method="POST">
         <div>

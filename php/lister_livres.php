@@ -32,9 +32,9 @@ try {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light">
-
+<?php require 'header.php'?>
 <div class="container mt-5">
-    <h1 class="mb-4">Tous les livres (Page <?php echo $page; ?>)</h1>
+    <h1 class="mb-4">Tous les livres</h1>
     
     <div class="table-responsive bg-white shadow-sm p-3 rounded">
         <table class="table table-striped table-hover">

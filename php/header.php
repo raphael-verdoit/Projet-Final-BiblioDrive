@@ -23,6 +23,11 @@ if (session_status() === PHP_SESSION_NONE) {
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo $prefixe_php; ?>lister_livres.php">Livres</a>
                     </li>
+                    <?php if(isset($_SESSION['mel'])): ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo $prefixe_php;?>ajout_livre.php">Ajouter un livre</a>
+                        </li>
+                    <?php endif; ?>
                 </ul>
 
                 <div class="d-flex align-items-center">
