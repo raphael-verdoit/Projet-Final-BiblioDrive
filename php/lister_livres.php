@@ -1,8 +1,7 @@
 <?php
 require_once("db.php");
 
-// Paramètres de pagination
-$limite = 10; // Nombre maximum de livres par page
+$limite = 7; 
 $page = isset($_GET['page']) && is_numeric($_GET['page']) ? (int)$_GET['page'] : 1;
 if ($page < 1) $page = 1;
 $offset = ($page - 1) * $limite;
