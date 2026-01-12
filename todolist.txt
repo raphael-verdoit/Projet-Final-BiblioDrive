@@ -1,0 +1,3 @@
+Valide panier,
+Creer un membre,
+Gestion profil (acces au ajouter livre et autres qui devraient rediriger vers accueuil)
